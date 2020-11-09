@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div class="container-fluid">    
+    <div id="top">
+        <div id="logo"> 
+            <img src="Jamz1.png"> 
+        </div> 
+    </div>
+</div>
+
+<div id="map-canvas"></div>
+
+<script>
+var map;
+
+function initialize() {
+    var c = new google.maps.LatLng(54.8867537,-1.557352);
+    var mapOptions = {
+        zoom:7,
+        center: c
+    };
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+}
+ 
+function loadScript() {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://maps.googleapis.com/maps/api/js?v=3' +
+        '&key=AIzaSyBRKNHBf1JRlIpLpni4eARAqz6DcTUjrcI&callback=initialize';
+    document.body.appendChild(script);
+}
+
+window.onload = loadScript;    
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+
+<style>
+html,
+body,
+#map-canvas {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px
+}
+
+.logo
+{
+  position:absolute; 
+	top: 10px; 
+	left: 16px; 
+  max-height: 150px;
+  max-width: 200px;
+  width: 120px;
+  height: 120px;
+}
+
+.top
+{
+    position:absolute; 
+	top: 10px; 
+	left: 16px; 
+  max-height: 170px;
+  max-width: 220px;
+  width: 100%px;
+  height: 150px;
+  background:black;
+}
+
+.container-fluid
+{
+    background: black;
+    background-color: black;
+}
+</style>
+</body>
+</html>
